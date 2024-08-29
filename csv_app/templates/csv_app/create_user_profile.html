@@ -1,0 +1,24 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+	<meta charset="UTF-8"> 
+	<title>Generate PDF</title> 
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"/>
+</head> 
+<body> 
+	<div class="container">
+		<h1>Generate and Download CSV</h1> 
+		<h2>Add a New Book</h2> 
+		<form method="post" class="form"> 
+			{% csrf_token %} 
+			{{ form.as_p }} 
+			<button type="submit" class="btn btn-primary">Add Book</button> 
+		</form> 
+		<!-- <p><a href="{% url 'home' %}" download>Download Book Catalog (PDF)</a></p> --> 
+		<p><a href="{% url 'generate_csv' %}" download>Download Book Catalog (CSV)</a></p> 
+	</div>
+	
+<br> 
+
+</body> 
+</html> 
